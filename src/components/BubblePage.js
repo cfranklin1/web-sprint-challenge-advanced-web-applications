@@ -4,8 +4,10 @@ import axios from "axios";
 import Bubbles from "./Bubbles";
 import ColorList from "./ColorList";
 
-const BubblePage = () => {
+const BubblePage = (props) => {
   const [colorList, setColorList] = useState([]);
+
+
 
   return (
     <>
