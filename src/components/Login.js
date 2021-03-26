@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {useHistory} from 'react-router';
 
 import axios from "axios";
-import { axiosWithAuth } from "../axiosWithAuth";
+import { axiosWithAuth } from "../helpers/axiosWithAuth";
 
 const initialValues = {
   username: "",
@@ -23,7 +23,8 @@ const Login = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/login", values)
+    axiosWithAuth()
+      .post("http://localhost:5000/api/login", values)
       .then((res) => {
         localStorage.setItem('token', res.data.token)
         push('/BubblePage');
