@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {useHistory} from 'react-router';
 
-import axios from "axios";
 import { axiosWithAuth } from "../helpers/axiosWithAuth";
 
 const initialValues = {
@@ -20,6 +19,7 @@ const Login = () => {
   const onChange = e => {
     setValues({ ...values, [e.target.name]: e.target.value});
   };
+
 
   const onSubmit = e => {
     e.preventDefault();
@@ -55,7 +55,7 @@ const Login = () => {
           values={values.password}
           onChange={onChange}
         />
-        <button>Log-in</button>
+        <button >Log-in</button>
       </form>
     </>
   );
